@@ -1,33 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Phrase matcher</title>
-
+    <title>Voice Blackboard</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <h1></h1>
-    <p></p>
+    <main class="app-shell">
+      <div class="controls">
+        <button id="listen-button" class="primary-button" type="button" disabled>
+          start
+        </button>
+        <button id="clear-button" type="button">clear</button>
+      </div>
 
-    <button>Start recordin</button>
+      <p id="status" class="visually-hidden" aria-live="polite"></p>
 
-    <textarea id="phrase-area">standard deviation
-hawthorne effect
-grade distribution
-    </textarea>
-
-    <div id="match-area"></div>
-
-    <div class="debug">
-      <p class="result">Right or wrong?</p>
-      <p class="output">...diagnostic messages</p>
-    </div>
+      <section
+        id="blackboard"
+        class="blackboard"
+        aria-label="Spoken phrase responses"
+      >
+        <div id="board-content" class="board-content"></div>
+      </section>
+    </main>
 
     <script src="script.js"></script>
   </body>

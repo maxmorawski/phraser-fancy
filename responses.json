@@ -1,0 +1,94 @@
+{
+  "responses": [
+    {
+      "triggers": ["purpose of this course", "what is this course about", "what is the point of this course"],
+      "title": "The Purpose of This Course",
+      "html": "<p>This course is designed to help you become a <strong>professional data scientist</strong> by building tangible, real-world skills.</p><ul><li>Read broadly to develop intuition.</li><li>Complete open-ended work without being told every step.</li><li>Apply concepts rather than merely memorize definitions.</li></ul>"
+    },
+    {
+      "triggers": ["grade breakdown", "how are grades calculated", "how is the course graded"],
+      "title": "Grade Breakdown",
+      "html": "<table class=\"grade-table\" aria-label=\"Course grade breakdown\"><tbody><tr><th>Homeworks</th><td>30%</td></tr><tr><th>Three midterms</th><td>13% each</td></tr><tr><th>Other in-class work</th><td>12%</td></tr><tr><th>Final exam</th><td>19%</td></tr></tbody></table>"
+    },
+    {
+      "triggers": ["reading expectations", "how much reading", "tell me about the readings"],
+      "title": "Readings",
+      "html": "<p>Expect reports, blog posts, and textbook chapters—often on topics beyond the day’s lecture.</p><div class=\"callout\"><strong>Plan on roughly one hour of reading per week.</strong></div><p>You are expected to remember the central ideas, and readings may appear on exams.</p>"
+    },
+    {
+      "triggers": ["course staff", "contact information", "how do I contact you", "office hours"],
+      "title": "Course Staff & Contact",
+      "html": "<div class=\"card-grid two-column\"><div class=\"info-card\"><strong>Max Morawski</strong><br>IRBE 2234<br>Office hours: M/W, 11:00–12:30<br>Best for: career, data-science, and high-level course questions</div><div class=\"info-card\"><strong>Teaching Assistants</strong><br>See ELMS and Piazza for office hours<br>Best for: project details and specific course content</div></div><p class=\"board-note\">Urgent grade, extension, or exam-logistics questions: cmsc320ta@gmail.com</p>"
+    },
+    {
+      "triggers": ["academic integrity", "cheating policy", "what counts as cheating"],
+      "title": "Academic Integrity",
+      "html": "<p>All suspected cheating is referred to <strong>OSC</strong>.</p><ul><li>Do not use prohibited help or materials during exams.</li><li>Do not submit code you cannot understand or explain.</li><li>You should be able to reproduce familiar Python patterns and summarize your own reports.</li><li>Everything you submit should be reproducible by you.</li></ul>"
+    },
+    {
+      "triggers": ["late policy", "extension policy", "what if my work is late"],
+      "title": "Late Work",
+      "html": "<div class=\"callout\"><strong>Work submitted after the deadline receives a zero.</strong></div><p>If you have a reason you need additional time, explain the situation during office hours. Extensions will generally be granted when requested directly.</p>"
+    },
+    {
+      "triggers": ["class policies", "miscellaneous policies", "technology policy"],
+      "title": "Class Policies",
+      "html": "<ul><li>Lectures are not recorded; a weekly topic recap will be posted.</li><li>Laptops and phones require an ADS accommodation; tablets are permitted.</li><li>If illness prevents your best effort on an exam, stay home and arrange an alternative.</li><li>Do not come to office hours while ill.</li></ul>"
+    },
+    {
+      "triggers": ["class code of conduct", "course code of conduct", "piazza rules"],
+      "title": "Class Code of Conduct",
+      "html": "<ul><li>Criticism of the instructor and teaching is allowed.</li><li>Harassment, inflammatory posts, and criticism directed at TAs or classmates are not.</li><li>Meme posts are welcome when they remain appropriate.</li><li>Do not make other students feel unwelcome.</li></ul>"
+    },
+    {
+      "triggers": ["course resources", "outside resources", "where can I get more help"],
+      "title": "Course Resources",
+      "html": "<p>Every lecture will include a recap of the most important takeaways. Suggested references include:</p><div class=\"card-grid\"><div class=\"info-card\">Hypothesis Testing</div><div class=\"info-card\">Learning SQL</div><div class=\"info-card\">Data Science from Scratch</div><div class=\"info-card\">Think Stats</div><div class=\"info-card\">Python for Data Analysis</div></div>"
+    },
+    {
+      "triggers": ["what is a data scientist", "define data scientist", "what does a data scientist do", "what is data science"],
+      "title": "What Is a Data Scientist?",
+      "html": "<p>A data scientist combines three roles:</p><div class=\"card-grid three-column\"><div class=\"info-card\"><strong>Programmer</strong></div><div class=\"info-card\"><strong>Machine-learning expert</strong></div><div class=\"info-card\"><strong>Statistician</strong></div></div><p>They usually advise other parts of a company by turning raw data into useful decisions—and, ultimately, economic value.</p>"
+    },
+    {
+      "triggers": ["examples of data science", "data science examples", "what are some data science applications"],
+      "title": "Examples of Data Science",
+      "html": "<div class=\"card-grid two-column\"><div class=\"info-card\"><strong>Drug efficacy</strong><br>Use trial results to determine whether a treatment works.</div><div class=\"info-card\"><strong>Movie recommendation</strong><br>Predict what someone will enjoy from past ratings.</div><div class=\"info-card\"><strong>Image recognition</strong><br>Identify what appears in a labeled image.</div><div class=\"info-card\"><strong>Credit risk</strong><br>Predict whether a borrower will repay a loan.</div></div>"
+    },
+    {
+      "triggers": ["data lifecycle", "show the data lifecycle", "what is the data lifecycle"],
+      "title": "The Data Lifecycle",
+      "html": "<svg class=\"chalk-defs\" aria-hidden=\"true\"><defs><filter id=\"chalk-rough\" x=\"-15%\" y=\"-15%\" width=\"130%\" height=\"130%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.72\" numOctaves=\"1\" seed=\"8\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"0.75\"/></filter></defs></svg><div class=\"process-flow chalk-lifecycle\"><div class=\"process-step\"><svg class=\"chalk-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M13 12h38a7 7 0 0 1 7 7v21a7 7 0 0 1-7 7H31L19 56v-9h-6a7 7 0 0 1-7-7V19a7 7 0 0 1 7-7Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M25 25c0-5 4-9 9-9s9 4 9 9c0 7-9 7-9 14\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M34 44h.1\"/></svg><span>01</span><strong>Frame the question</strong></div><div class=\"process-step\"><svg class=\"chalk-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M11 15c0-5 9-9 21-9s21 4 21 9-9 9-21 9-21-4-21-9Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M11 15v15c0 5 9 9 21 9s21-4 21-9V15\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M11 30v15c0 5 9 9 21 9s21-4 21-9V30\"/></svg><span>02</span><strong>Collect data</strong></div><div class=\"process-step\"><svg class=\"chalk-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M9 12h46v40H9Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M9 23h31M9 34h27M9 45h24\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"m38 39 6 6 12-17\"/></svg><span>03</span><strong>Clean & validate</strong></div><div class=\"process-step\"><svg class=\"chalk-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M9 51V12M9 51h42\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M17 43V32M27 43V22M37 43V28\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"44\" cy=\"20\" r=\"10\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"m51 27 8 8\"/></svg><span>04</span><strong>Explore & visualize</strong></div><div class=\"process-step\"><svg class=\"chalk-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M16 18 32 9l16 9v18L32 46 16 36Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M16 18 32 28l16-10M32 28v18\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"16\" cy=\"18\" r=\"4\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"32\" cy=\"9\" r=\"4\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"48\" cy=\"18\" r=\"4\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"32\" cy=\"28\" r=\"4\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"32\" cy=\"46\" r=\"4\"/></svg><span>05</span><strong>Model & infer</strong></div><div class=\"process-step\"><svg class=\"chalk-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><circle class=\"chalk-line\" pathLength=\"1\" cx=\"32\" cy=\"32\" r=\"23\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"m19 33 9 9 18-22\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M32 4v5M32 55v5M4 32h5M55 32h5\"/></svg><span>06</span><strong>Evaluate</strong></div><div class=\"process-step\"><svg class=\"chalk-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M8 10h34a6 6 0 0 1 6 6v17a6 6 0 0 1-6 6H25l-9 8v-8H8a6 6 0 0 1-6-6V16a6 6 0 0 1 6-6Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M35 39v5a6 6 0 0 0 6 6h7v7l8-7h1a5 5 0 0 0 5-5V31a5 5 0 0 0-5-5h-9\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M13 24h25M13 31h17\"/></svg><span>07</span><strong>Communicate & decide</strong></div><div class=\"process-step\"><svg class=\"chalk-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M7 9h50v36H7Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M22 55h20M32 45v10\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"m14 36 10-10 8 6 15-15\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M39 17h8v8\"/></svg><span>08</span><strong>Deploy & monitor</strong></div></div>"
+    },
+    {
+      "triggers": ["getting data", "where does data come from", "data collection"],
+      "title": "Getting Data",
+      "html": "<svg class=\"chalk-icon stage-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M11 15c0-5 9-9 21-9s21 4 21 9-9 9-21 9-21-4-21-9Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M11 15v15c0 5 9 9 21 9s21-4 21-9V15\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M11 30v15c0 5 9 9 21 9s21-4 21-9V30\"/></svg><p>Data may be:</p><ul><li>Gathered from external sources</li><li>Retrieved from existing company databases</li><li>Collected by tools you create</li></ul><div class=\"divider-label\">or</div><p><strong>Design an experiment</strong> that produces the data you need.</p>"
+    },
+    {
+      "triggers": ["data processing", "processing data", "why do we clean data"],
+      "title": "Data Processing",
+      "html": "<svg class=\"chalk-icon stage-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M9 12h46v40H9Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M9 23h31M9 34h27M9 45h24\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"m38 39 6 6 12-17\"/></svg><div class=\"callout\"><strong>Most real-world data will be bad.</strong></div><p>Before analysis, you will need to address:</p><ul><li>Duplicates</li><li>Inconsistent formatting</li><li>Strange outliers</li><li>Incorrect values and other mistakes</li></ul>"
+    },
+    {
+      "triggers": ["data exploration", "exploring data", "what do we look for in data"],
+      "title": "Data Exploration",
+      "html": "<svg class=\"chalk-icon stage-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M9 51V12M9 51h42\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M17 43V32M27 43V22M37 43V28\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"44\" cy=\"20\" r=\"10\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"m51 27 8 8\"/></svg><p>When you receive a large body of raw data, begin by asking:</p><ul><li><strong>What is actually here?</strong></li><li>Are there interesting relationships or correlations?</li><li>Is anything important missing?</li><li>Do we have what we need to answer the question?</li></ul>"
+    },
+    {
+      "triggers": ["what is a model", "modeling", "data modeling"],
+      "title": "Modeling",
+      "html": "<svg class=\"chalk-icon stage-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M16 18 32 9l16 9v18L32 46 16 36Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M16 18 32 28l16-10M32 28v18\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"16\" cy=\"18\" r=\"4\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"32\" cy=\"9\" r=\"4\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"48\" cy=\"18\" r=\"4\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"32\" cy=\"28\" r=\"4\"/><circle class=\"chalk-line\" pathLength=\"1\" cx=\"32\" cy=\"46\" r=\"4\"/></svg><div class=\"definition\">A <strong>model</strong> is a module that uses data to predict the future.</div><ul><li>The model is often the primary deliverable.</li><li>Its predictions may determine company policy or live operational decisions.</li></ul>"
+    },
+    {
+      "triggers": ["convincing people you're right", "communicating results", "data science communication", "explain the model"],
+      "title": "Convincing People You’re Right",
+      "html": "<svg class=\"chalk-icon stage-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path class=\"chalk-line\" pathLength=\"1\" d=\"M8 10h34a6 6 0 0 1 6 6v17a6 6 0 0 1-6 6H25l-9 8v-8H8a6 6 0 0 1-6-6V16a6 6 0 0 1 6-6Z\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M35 39v5a6 6 0 0 0 6 6h7v7l8-7h1a5 5 0 0 0 5-5V31a5 5 0 0 0-5-5h-9\"/><path class=\"chalk-line\" pathLength=\"1\" d=\"M13 24h25M13 31h17\"/></svg><p>A correct analysis has little value if decision-makers do not understand or trust it.</p><div class=\"callout\"><strong>Translate technical evidence into a clear explanation of what the model does, why it is credible, and what action should follow.</strong></div>"
+    },
+    {
+      "triggers": ["course outline", "what will we learn", "show the course outline"],
+      "title": "Course Outline",
+      "html": "<div class=\"course-parts\"><div class=\"course-part\"><span>Part Zero</span><strong>Foundations</strong><p>Data, communication, and data-querying tools</p></div><div class=\"course-part\"><span>Part One</span><strong>Cleaning & exploration</strong><p>Turn messy data into something organized and understood</p></div><div class=\"course-part\"><span>Part Two</span><strong>Modeling</strong><p>Make defensible predictions about the future</p></div><div class=\"course-part\"><span>Part Three</span><strong>Specialized models</strong><p>Apply additional modeling approaches to specific problems</p></div></div>"
+    }
+  ]
+}

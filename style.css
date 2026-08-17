@@ -1,67 +1,499 @@
-body,
-html {
-  margin: 0;
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: #101713;
+  color: #f4efdf;
 }
 
-html {
-  height: 100%;
-  background-color: white;
+* {
+  box-sizing: border-box;
 }
 
+html,
 body {
-  height: inherit;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   overflow: hidden;
 }
 
-
-h1, p, div {
-  font-family: sans-serif;
-  text-align: center;
-}
-
-.found-match {
-  font-size: 18pt;  
-}
-
-#phrase-area {
-  width: 100%;
-  height: 500px;
-}
-
-div.debug p {
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-div.debug {
-  overflow: auto;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: none;
+body {
+  background:
+    radial-gradient(circle at 50% -20%, rgba(87, 105, 90, 0.18), transparent 44rem),
+    #101713;
 }
 
 button {
-  margin: 0 auto;
+  border: 1px solid #616c63;
+  border-radius: 0.5rem;
+  padding: 0.48rem 0.9rem;
+  background: #252e28;
+  color: #f4efdf;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+button:hover:not(:disabled) {
+  border-color: #8a958b;
+  background: #303b33;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #ddca88;
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.45;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.45rem;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  padding: 0.45rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.primary-button {
+  border-color: #c5b477;
+  background: #ddca88;
+  color: #182019;
+  font-weight: 720;
+}
+
+.primary-button:hover:not(:disabled) {
+  border-color: #eee0ad;
+  background: #e8d99d;
+}
+
+.primary-button.is-listening {
+  border-color: #a85664;
+  background: #782d3c;
+  color: #fff6ef;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+.blackboard {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  border: clamp(8px, 1.25vw, 16px) solid #69462f;
+  border-radius: 0.45rem;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.045),
+    inset 0 0 80px rgba(0, 0, 0, 0.46),
+    0 14px 34px rgba(0, 0, 0, 0.5);
+  background:
+    linear-gradient(105deg, rgba(255, 255, 255, 0.018), transparent 23%),
+    radial-gradient(ellipse at 18% 16%, rgba(246, 240, 218, 0.04), transparent 23%),
+    radial-gradient(ellipse at 83% 74%, rgba(246, 240, 218, 0.026), transparent 27%),
+    #15382f;
+  scrollbar-color: rgba(237, 227, 197, 0.36) transparent;
+}
+
+.blackboard::after {
+  position: sticky;
+  bottom: 0;
   display: block;
-  font-size: 1.1rem;
-  width: 170px;
-  line-height: 2;
-  margin-top: 30px;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, transparent, rgba(235, 219, 174, 0.23), transparent);
+  content: "";
 }
 
-@media all and (max-height: 410px) {
-  div {
-    position: static;
-  }
+.blackboard::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      7deg,
+      transparent 0,
+      transparent 76px,
+      rgba(244, 239, 223, 0.012) 78px,
+      transparent 81px
+    ),
+    radial-gradient(ellipse at 26% 58%, rgba(244, 239, 223, 0.025), transparent 20%),
+    radial-gradient(ellipse at 72% 29%, rgba(244, 239, 223, 0.02), transparent 18%);
+  content: "";
 }
 
-.phrase {
-  font-weight: bold;
+.board-content {
+  position: relative;
+  z-index: 1;
+  width: min(1400px, 100%);
+  min-height: 100%;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  color: #f4efdf;
+  font-family: "Chalkboard SE", "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  line-height: 1.5;
+  text-align: left;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.52);
 }
 
-.output {
+.board-response {
+  padding-bottom: 2rem;
+}
+
+.board-response h2 {
+  margin: 0 0 0.85rem;
+  color: #e2cf8d;
+  font-size: clamp(1.8rem, 3.2vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.board-response p {
+  margin: 0 0 0.8rem;
+}
+
+.board-response ul,
+.board-response ol {
+  margin: 0.45rem 0 0;
+  padding-left: 1.55em;
+}
+
+.board-response li {
+  margin: 0.28rem 0;
+  padding-left: 0.2rem;
+}
+
+.board-response strong {
+  color: #e7d59a;
+}
+
+.board-response em {
+  color: #c8ddd1;
+}
+
+.board-note {
+  color: #b9c9bd;
+  font-size: 0.72em;
   font-style: italic;
 }
 
+.formula {
+  margin: 1rem 0;
+  color: #d8e0e7;
+  font-family: "Times New Roman", serif;
+  font-size: 1.08em;
+  text-align: center;
+}
+
+.board-response table {
+  width: 100%;
+  margin-top: 1.25rem;
+  border-collapse: collapse;
+  font-size: clamp(0.74rem, 1.5vw, 1.35rem);
+}
+
+.board-response th,
+.board-response td {
+  border: 1px solid rgba(237, 227, 197, 0.42);
+  padding: 0.48em 0.55em;
+  text-align: right;
+}
+
+.board-response th {
+  color: #e2cf8d;
+  font-weight: 700;
+}
+
+.board-response th:first-child,
+.board-response td:first-child {
+  text-align: left;
+}
+
+.board-response tbody tr:nth-child(even) {
+  background: rgba(238, 230, 202, 0.045);
+}
+
+.board-response.is-writing::after {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.12em;
+  margin-left: 0.15em;
+  background: #f4efdf;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.65);
+  content: "";
+  animation: blink 800ms steps(1, end) infinite;
+  vertical-align: baseline;
+}
+
+.callout,
+.definition {
+  margin: 1rem 0;
+  border-left: 4px solid #ddca88;
+  padding: 0.7em 0.9em;
+  background: rgba(5, 24, 18, 0.3);
+}
+
+.definition {
+  font-size: 1.12em;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+
+.card-grid.two-column {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card-grid.three-column {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.info-card {
+  border: 1px solid rgba(226, 207, 141, 0.38);
+  border-radius: 0.35rem;
+  padding: 0.75em 0.85em;
+  background: rgba(5, 24, 18, 0.24);
+}
+
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.process-step {
+  display: flex;
+  align-items: center;
+  min-height: 4.4em;
+  border: 1px solid rgba(226, 207, 141, 0.42);
+  border-radius: 0.35rem;
+  padding: 0.65em;
+  background: rgba(5, 24, 18, 0.28);
+}
+
+.process-step span {
+  margin-right: 0.55em;
+  color: #e2cf8d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78em;
+}
+
+.chalk-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.chalk-lifecycle {
+  gap: 0.9rem;
+}
+
+.chalk-lifecycle .process-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 8.6em;
+  border-style: dashed;
+  padding: 0.75em 0.65em;
+  background: rgba(7, 31, 24, 0.2);
+  text-align: center;
+  flex-direction: column;
+}
+
+.chalk-lifecycle .process-step span {
+  margin: 0.2em 0 0.05em;
+  color: #c9d9ce;
+  font-size: 0.56em;
+  letter-spacing: 0.14em;
+}
+
+.chalk-lifecycle .process-step strong {
+  display: block;
+  color: #f4efdf;
+  font-size: 0.72em;
+  line-height: 1.18;
+}
+
+.chalk-icon {
+  width: 3.25em;
+  height: 3.25em;
+  overflow: visible;
+  color: #f1e8cc;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.28));
+}
+
+.stage-icon {
+  float: right;
+  width: clamp(4.5rem, 10vw, 7rem);
+  height: clamp(4.5rem, 10vw, 7rem);
+  margin: -0.3rem 0 1rem 1.5rem;
+}
+
+.chalk-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  filter: url(#chalk-rough-global);
+  animation: chalk-draw 1.2s cubic-bezier(0.42, 0, 0.35, 1) forwards;
+}
+
+.chalk-icon .chalk-line:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.chalk-icon .chalk-line:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.chalk-icon .chalk-line:nth-child(4) {
+  animation-delay: 360ms;
+}
+
+.chalk-icon .chalk-line:nth-child(5) {
+  animation-delay: 480ms;
+}
+
+.chalk-icon .chalk-line:nth-child(6) {
+  animation-delay: 600ms;
+}
+
+@keyframes chalk-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.divider-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.85rem 0;
+  color: #b9c9bd;
+  font-size: 0.72em;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.divider-label::before,
+.divider-label::after {
+  flex: 1;
+  height: 1px;
+  background: rgba(185, 201, 189, 0.32);
+  content: "";
+}
+
+.course-parts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.course-part {
+  border-top: 3px solid #ddca88;
+  padding: 0.85em;
+  background: rgba(5, 24, 18, 0.25);
+}
+
+.course-part span,
+.course-part strong {
+  display: block;
+}
+
+.course-part span {
+  margin-bottom: 0.25em;
+  color: #b9c9bd;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+
+.course-part p {
+  margin-top: 0.55em;
+  font-size: 0.78em;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .app-shell {
+    gap: 0.35rem;
+    padding: 0.35rem;
+  }
+
+  .board-content {
+    padding: 1.2rem;
+  }
+
+  .board-response th,
+  .board-response td {
+    padding: 0.4em 0.3em;
+  }
+
+  .card-grid.two-column,
+  .card-grid.three-column,
+  .process-flow,
+  .course-parts {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-icon {
+    float: none;
+    margin: 0 auto 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .board-response.is-writing::after {
+    animation: none;
+  }
+
+  .chalk-line {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
